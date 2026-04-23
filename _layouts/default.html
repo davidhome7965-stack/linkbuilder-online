@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | LinkBuilder.online</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Aapki index.html ki puri CSS yahan copy-paste karein */
+    /* ... (CSS code from index.html) ... */
+    
+    /* Blog specific extra styles */
+    .blog-section { padding: 120px 20px; max-width: 1200px; margin: 0 auto; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; margin-top: 50px; }
+    .post-card { background: #0F172A; border: 1px solid #1E293B; border-radius: 16px; padding: 30px; transition: 0.4s; position: relative; overflow: hidden; }
+    .post-card:hover { border-color: var(--teal); transform: translateY(-10px); }
+    .post-tag { color: var(--coral); font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nl">LinkBuilder<span class="dot">.</span></div>
+    <div class="nm">
+      <a href="/">Home</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  <footer class="footer">
+     </footer>
+
+</body>
+</html>
