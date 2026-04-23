@@ -1,13 +1,37 @@
 ---
-layout: default
-title: Blog
+layout: none
 ---
-
-<h1>Latest Articles</h1>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string }}
-    </li>
-  {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Blog - LinkBuilder</title>
+    <style>
+        body { background: #070E1A; color: white; font-family: 'Inter', sans-serif; padding: 50px; }
+        .blog-list { max-width: 900px; margin: 0 auto; list-style: none; }
+        .post-card { 
+            background: #0F172A; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            border-radius: 10px; 
+            border-left: 5px solid #00C9B1; 
+            transition: 0.3s;
+        }
+        .post-card:hover { border-left-color: #E8451A; transform: translateX(10px); }
+        .post-card a { color: #00C9B1; text-decoration: none; font-size: 24px; font-weight: bold; }
+        .post-date { color: #94A3B8; font-size: 14px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="blog-list">
+        <h1 style="color: #E8451A;">Latest Blog Posts</h1>
+        <br>
+        {% for post in site.posts %}
+          <div class="post-card">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <div class="post-date">Published on: {{ post.date | date: "%B %d, %2026" }}</div>
+          </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
