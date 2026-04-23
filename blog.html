@@ -1,37 +1,20 @@
 ---
-layout: none
+layout: default
+title: Our Blog
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Our Blog - LinkBuilder</title>
-    <style>
-        body { background: #070E1A; color: white; font-family: 'Inter', sans-serif; padding: 50px; }
-        .blog-list { max-width: 900px; margin: 0 auto; list-style: none; }
-        .post-card { 
-            background: #0F172A; 
-            padding: 20px; 
-            margin-bottom: 20px; 
-            border-radius: 10px; 
-            border-left: 5px solid #00C9B1; 
-            transition: 0.3s;
-        }
-        .post-card:hover { border-left-color: #E8451A; transform: translateX(10px); }
-        .post-card a { color: #00C9B1; text-decoration: none; font-size: 24px; font-weight: bold; }
-        .post-date { color: #94A3B8; font-size: 14px; margin-top: 5px; }
-    </style>
-</head>
-<body>
-    <div class="blog-list">
-        <h1 style="color: #E8451A;">Latest Blog Posts</h1>
-        <br>
-        {% for post in site.posts %}
-          <div class="post-card">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            <div class="post-date">Published on: {{ post.date | date: "%B %d, %2026" }}</div>
-          </div>
-        {% endfor %}
+
+<div class="blog-section">
+  <h1 class="h-title center">Latest <span class="hl-t">SEO</span> Insights</h1>
+  <p class="h-subtitle center">Read our latest articles on link building and digital growth.</p>
+
+  <div class="blog-grid">
+    {% for post in site.posts %}
+    <div class="post-card">
+      <div class="post-tag">{{ post.categories | first }}</div>
+      <h3 style="margin: 15px 0; font-size: 24px; color: #fff;">{{ post.title }}</h3>
+      <p style="color: #94A3B8; margin-bottom: 20px; line-height: 1.6;">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+      <a href="{{ post.url | relative_url }}" style="color: var(--teal); text-decoration: none; font-weight: 700;">Read More →</a>
     </div>
-</body>
-</html>
+    {% endfor %}
+  </div>
+</div>
