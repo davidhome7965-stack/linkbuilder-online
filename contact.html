@@ -1,0 +1,49 @@
+---
+layout: default
+title: Contact Us
+---
+
+<div class="contact-container">
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h1 class="h-title">Get In <span class="hl-t">Touch</span></h1>
+        <p class="h-subtitle">Have a project in mind? Let's discuss how we can grow your traffic.</p>
+    </div>
+
+    <div class="contact-card">
+        <form action="https://formspree.io/f/your-id-here" method="POST" class="contact-form">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="_replyto" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-coral" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .contact-container { padding: 140px 20px 80px; max-width: 600px; margin: 0 auto; }
+    .contact-card { background: #0F172A; padding: 40px; border-radius: 20px; border: 1px solid #1E293B; }
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-group label { color: var(--teal); font-weight: 600; font-size: 14px; }
+    .form-group input, .form-group textarea {
+        background: #070E1A;
+        border: 1px solid #1E293B;
+        padding: 15px;
+        border-radius: 10px;
+        color: white;
+        font-family: inherit;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+        border-color: var(--teal);
+        outline: none;
+    }
+</style>
