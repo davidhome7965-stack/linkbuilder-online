@@ -1,18 +1,61 @@
 ---
 layout: default
 ---
-<article class="blog-section" style="max-width: 800px;">
-  <div class="post-tag">{{ page.date | date: "%B %d, %Y" }}</div>
-  <h1 style="font-size: 48px; margin: 20px 0; color: #fff;">{{ page.title }}</h1>
-  <hr style="border: 0; border-top: 1px solid #1E293B; margin-bottom: 40px;">
+<article class="post-full-content">
+  <div class="post-header">
+    <div class="post-tag" style="text-align: center; margin-bottom: 20px;">
+      {{ page.date | date: "%B %d, %Y" }} • {{ page.categories | join: ", " }}
+    </div>
+    <h1 class="post-main-title">{{ page.title }}</h1>
+    <div class="title-underline"></div>
+  </div>
   
-  <div class="post-content" style="line-height: 1.8; font-size: 18px; color: #CBD5E1;">
+  <div class="post-body">
     {{ content }}
+  </div>
+
+  <div style="margin-top: 60px; text-align: center;">
+    <a href="/blog.html" class="btn-coral" style="text-decoration: none; display: inline-block;">← Back to Blog</a>
   </div>
 </article>
 
 <style>
-  .post-content h2 { color: var(--teal); margin-top: 40px; }
-  .post-content p { margin-bottom: 20px; }
-  .post-content ul { margin-left: 20px; margin-bottom: 20px; color: var(--coral); }
+  .post-full-content { 
+    padding: 160px 20px 100px; 
+    max-width: 850px; 
+    margin: 0 auto; 
+  }
+  .post-main-title { 
+    font-size: clamp(32px, 5vw, 52px); 
+    color: #fff; 
+    text-align: center; 
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .title-underline {
+    width: 80px;
+    height: 4px;
+    background: var(--teal);
+    margin: 0 auto 50px;
+    border-radius: 2px;
+  }
+  .post-body { 
+    line-height: 1.9; 
+    font-size: 19px; 
+    color: #CBD5E1; 
+  }
+  .post-body h2 { color: var(--teal); margin: 45px 0 20px; font-size: 30px; }
+  .post-body h3 { color: #fff; margin: 30px 0 15px; }
+  .post-body p { margin-bottom: 25px; }
+  .post-body ul, .post-body ol { margin-bottom: 25px; padding-left: 25px; }
+  .post-body li { margin-bottom: 12px; }
+  .post-body strong { color: var(--coral); }
+  
+  /* Image styling inside blog */
+  .post-body img { 
+    max-width: 100%; 
+    border-radius: 15px; 
+    margin: 30px 0;
+    border: 1px solid #1E293B;
+  }
 </style>
