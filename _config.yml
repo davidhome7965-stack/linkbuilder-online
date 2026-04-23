@@ -1,3 +1,4 @@
-title: LinkBuilder Online
-description: Expert link building services
-theme: jekyll-theme-minimal
+baseurl: ""
+url: "https://link-builder.online"
+markdown: kramdown
+highlighter: rouge
